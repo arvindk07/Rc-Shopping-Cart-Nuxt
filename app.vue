@@ -1,20 +1,16 @@
 <template>
-  <div>
-    <!-- <HomeWelcome /> -->
-    <button @click="toggle">Toggle</button>
-    <!-- <component :is="MyComponent" /> -->
-    <div v-if="MyComponent === 'welcome'">
-      <HomeWelcome />
-    </div>
-    <Counter v-else />
-  </div>
+  <a href="#" @click="view('home')">Home</a>
+  <a href="#" @click="view('counter')">Counter</a>
+
+  <HomeWelcome v-if="page === 'home'" />
+  <Counter v-if="page === 'counter'" />
 </template>
 
 <script setup>
 // const MyComponent = ref(resolveComponent("Counter"));
-const MyComponent = ref("counter");
+const page = ref("home");
 
-function toggle() {
-  MyComponent.value = "welcome";
+function view(name) {
+  page.value = name;
 }
 </script>
