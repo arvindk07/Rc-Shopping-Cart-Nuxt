@@ -1,13 +1,16 @@
 <template>
   <div>
-    <HomeWelcome />
-    <!-- <button @click="toggle">Toggle</button> -->
-    <component :is="Counter" />
+    <!-- <HomeWelcome /> -->
+    <button @click="toggle">Toggle</button>
+    <component :is="MyComponent" />
   </div>
 </template>
 
 <script setup>
-const Counter = resolveComponent("Counter");
+// const MyComponent = ref(resolveComponent("Counter"));
+const MyComponent = shallowRef(resolveComponent("Counter"));
 
-// function toggle(){}
+function toggle() {
+  MyComponent.value = resolveComponent("HomeWelcome");
+}
 </script>
