@@ -8,14 +8,30 @@
   </div>
 </template>
 
-<script setup>
-const count = ref(0);
+<script>
+export default {
+  data() {
+    return {
+      count: 0,
+    };
+  },
+  methods: {
+    increament() {
+      this.count++;
+    },
+    decreament() {
+      this.count++;
+    },
+  },
+};
 
-function increament() {
-  count.value++;
-}
+// const count = ref(0);
 
-function decreament() {
-  count.value--;
-}
+// function increament() {
+//   count.value++;
+// }
+
+// function decreament() {
+//   count.value--;
+// }
 </script>
