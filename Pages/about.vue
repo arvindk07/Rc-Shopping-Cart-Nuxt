@@ -1,1 +1,7 @@
-<template>Hello About</template>
+<template>
+  <div>Hello About</div>
+</template>
+
+<script>
+definePageMeta({ layout: false });
+</script>
